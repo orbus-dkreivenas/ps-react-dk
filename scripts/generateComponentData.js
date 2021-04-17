@@ -25,6 +25,7 @@ function generate(paths) {
   var errors = [];
   var componentData = getDirectories(paths.components).map(function(componentName) {
     try {
+      console.log(componentName);
       return getComponentData(paths, componentName)
     } catch(error) {
       errors.push('An error occurred while attempting to generate metadata for ' + componentName + '. ' + error);

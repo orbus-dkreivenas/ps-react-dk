@@ -24,7 +24,11 @@ export default class Docs extends React.Component {
         return (
             <div>
                 <Navigation components={componentData.map(component => component.name)} />
-                <ComponentPage component={component} />
+                {
+                    typeof component === "string"
+                        ? <div>component</div>
+                        : <ComponentPage component={component} />
+                }
             </div>
         );
     }
